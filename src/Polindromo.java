@@ -21,7 +21,7 @@ public class Polindromo {
             } else {
                 System.out.println("La palabra o frase digitda no es polindroma");
                 System.out.println();
-
+                System.out.println();
 
             }
 
