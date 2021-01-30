@@ -6,29 +6,36 @@ public class Polindromo {
 
         Scanner s = new Scanner(System.in);
         String frase;
-        System.out.println("Digite una palabra o frase ");
-        frase = s.nextLine();
-        frase = frase.replaceAll(" ", "");
-        int j = frase.length();
+        int siPoli = 0;
+        int noPoli = 0;
+        while (true) {
+            System.out.println("Digite una palabra o frase ");
+            frase = s.nextLine();
+            frase = frase.replaceAll(" ", "");
+            int j = frase.length();
 
-        System.out.println(" La frase o palabra que digito es: " + frase);
+            System.out.println(" La frase o palabra que digito es: " + frase);
 
-        for (int i = 0; i < frase.length(); i++) {
-            if (frase.charAt(i) == frase.charAt(j - 1)) {
-                //System.out.println(frase.charAt(i) + " = " + frase.charAt(j-1));
+            for (int i = 0; i < frase.length(); i++) {
                 j--;
-                //System.out.println("La palabra o frase que se digito es  polindroma");
-            } else {
-                System.out.println("La palabra o frase digitda no es polindroma");
-                System.out.println();
-                System.out.println();
-
+                if (frase.charAt(i) == frase.charAt(j)) {
+                    System.out.println(frase.charAt(i) + " -> " + frase.charAt(j) + " son iguales.");
+                    siPoli++;
+                } else {
+                    System.out.println(frase.charAt(i) + " -> " + frase.charAt(j) + " son diferentes.");
+                    noPoli++;
+                }
+            }
+            if (siPoli == frase.length()) {
+                System.out.println("Lo digitado es un Polidromo");
+                break;
+            } else if (noPoli != frase.length()) {
+                System.out.println("Lo digitado no es un polindromo");
+                break;
             }
 
 
         }
-
-
     }
 }
 
