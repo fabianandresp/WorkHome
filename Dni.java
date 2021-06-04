@@ -81,7 +81,7 @@ public class Dni {
 
                 //COMPROBACION FINAL
                 // CON LAS VARIABLES RESULT Y ULTIMO SE BUSCAN LOS DATOS EN EL HASHMAP
-                if (tabla.containsKey(result) && tabla.containsValue(ultimo.toUpperCase())) {
+                if (tabla.get(result).equals(ultimo.toUpperCase())) {
                     System.out.println("Resultado: " + result + " Letra asiganada: " + ultimo.toUpperCase());
                     System.out.println("DNI VALIDO!!");
 
